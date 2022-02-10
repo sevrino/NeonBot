@@ -1,13 +1,11 @@
 import discord
 from discord.ext import commands
-from discord.commands import slash_command
-
 
 class manage(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-    
-    @slash_command(description="Check bot's response latency")
+
+
     @commands.command(name='킥')
     @commands.guild_only()
     @commands.has_permissions(administrator=True)
