@@ -17,7 +17,6 @@
   </a>
   <a href="https://github.com/sevrino/neonbot/issues" target="_blank"><img src="https://img.shields.io/github/issues/sevrino/neonbot" alt="license">
   </a>
-  <a href="https://www.codacy.com/manual/sevrino/neonbot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sevrino/neonbot&amp;utm_campaign=Badge_Grade" target="_blank"><img src="https://api.codacy.com/project/badge/Grade/e106e496272445a2974cb3fb7f918d8e"></a>
   </p>
 
 ---
