@@ -5,7 +5,6 @@ import os
 
 with open('./config/config.json') as json_file:
     json_data = json.load(json_file)
-
     token = json_data["bot_token"]
     token_beta = json_data["bot_token_beta"]
     prefix = json_data["default_prefix"]
@@ -20,7 +19,6 @@ if beta == True:
 else:
     token_release = token
 
-
 @bot.event
 async def on_ready():
     print("version : v%s" % ver)
@@ -28,10 +26,8 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=game)
 
 
-extension = ["cogs.command", "cogs.hanriver", "cogs.league", "cogs.manage"]
-
-for filename in os.listdir('./cogs'):
-    if filename.endswith('.py'):
-        client.load_extension(f'cogs.{filename[:-3]}')
+for folder in os.listdir("modules"):
+    if os.path.exists(os.path.join("modules", folder, "cog.py")):
+        client.load_extension(f"modules.{folder}.cog")
 
 bot.run(token_release)
