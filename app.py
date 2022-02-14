@@ -3,15 +3,15 @@ from discord.ext import commands
 import json
 import os
 
-with open('./config/config.json') as json_file:
+with open('./config/setting.json') as json_file:
     json_data = json.load(json_file)
     token = json_data["bot_token"]
     token_beta = json_data["bot_token_beta"]
     prefix = json_data["default_prefix"]
     ver = json_data["ver"]
 
-client = commands.Bot(command_prefix=prefix)
-bot = discord.Bot()
+bot = commands.Bot(command_prefix=prefix)
+
 
 beta = True
 if beta == True:
@@ -23,11 +23,10 @@ else:
 async def on_ready():
     print("version : v%s" % ver)
     game = discord.Game("%s도움말" % prefix + " | " + "v.%s" % ver)
-    await client.change_presence(status=discord.Status.online, activity=game)
+    await bot.change_presence(status=discord.Status.online, activity=game)
 
-
-for folder in os.listdir("modules"):
-    if os.path.exists(os.path.join("modules", folder, "cog.py")):
-        client.load_extension(f"modules.{folder}.cog")
+for filename in os.listdir("modules/cogs"):
+    if filename.endswith('.py'):
+        bot.load_extension(f'modules.cogs.{filename[:-3]}')
 
 bot.run(token_release)

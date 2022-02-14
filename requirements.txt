@@ -1,1 +1,15 @@
-py-cord
+aiohttp==3.7.4.post0
+async-timeout==3.0.1
+attrs==21.4.0
+certifi==2021.10.8
+chardet==4.0.0
+charset-normalizer==2.0.12
+discord==1.7.3
+discord.py==1.7.3
+idna==3.3
+multidict==6.0.2
+py-cord @ git+https://github.com/Pycord-Development/pycord@429dadce242bcdd8cfc224a072a5558497d0618b
+requests==2.27.1
+typing_extensions==4.1.0
+urllib3==1.26.8
+yarl==1.7.2

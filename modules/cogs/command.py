@@ -1,10 +1,8 @@
 import discord
-import asyncio
 from discord.ext import commands
-from discord.ext.commands import Bot
 import discord
+import asyncio
 import random
-
 
 class command(commands.Cog):
     def __init__(self, bot):
@@ -26,19 +24,11 @@ class command(commands.Cog):
             text="Copyright (c) 2019-2020 sevrino All rights reserved.")
         await ctx.send(embed=embed)
 
-    @commands.command(name='핑')
-    async def ping(self, ctx):
-        embed = discord.Embed(colour=0x5C7EBB)
-        embed.add_field(name="PING", value="퐁!")
-        embed.set_footer(
-            text="Copyright (c) 2019-2020 sevrino All rights reserved.")
-        await ctx.send(embed=embed)
-
     @commands.command(name='초대')
     async def invite(self, ctx):
         embed = discord.Embed(
-            title="네온봇 추가 링크입니다.", url="https://discordapp.com/api/oauth2/authorize?client_id=559709567903072256&permissions=8&scope=bot", colour=0x5C7EBB)
-        embed.set_author(name="Neon", url="https://discordapp.com/api/oauth2/authorize?client_id=559709567903072256&permissions=8&scope=bot",
+            title="네온봇 추가 링크입니다.", url="https://discord.com/api/oauth2/authorize?client_id=559709567903072256&permissions=8&scope=bot%20applications.commands", colour=0x5C7EBB)
+        embed.set_author(name="Neon", url="https://discord.com/api/oauth2/authorize?client_id=559709567903072256&permissions=8&scope=bot%20applications.commands",
                          icon_url="http://i.imgur.com/VOKVy0m.jpg")
         await ctx.send(embed=embed)
 

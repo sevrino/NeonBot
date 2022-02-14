@@ -3,13 +3,11 @@ import discord
 import json
 import requests as r
 
-bot = discord.Bot()
-
-@bot.slash_command(name='한강', description='한강 수온을 확인합니다.')
 class hanriver(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
+    
+    @commands.command(name="한강")
     async def hanriver(self, ctx):
         api = "https://api.hangang.msub.kr"
 
@@ -22,10 +20,10 @@ class hanriver(commands.Cog):
             temp = data["temp"]
             refresh_time = data["time"]
 
-        embed = discord.Embed(colour=0x5C7EBB)
+        embed = discord.Embed(colour=0x000000)
         embed.add_field(name="한강 수온",
                         value="현재 한강 수온은 %s도 입니다." % temp)
-        embed.set_footer(text="새로고침 시간 : %s" % refresh_time)
+        embed.set_footer(text="새로고침 시간 : %s" % refresh_time + "\n자살예방상담전화 : 1393")
         await ctx.send(embed=embed)
 
 def setup(bot):
